@@ -23,7 +23,7 @@ public class S3Service implements FileService {
     @Override
     public String uploadFile(final MultipartFile multipartFile) {
         var filenameExtension = StringUtils.getFilenameExtension(multipartFile.getOriginalFilename());
-        var key = UUID.randomUUID() + filenameExtension;
+        var key = UUID.randomUUID() + "." + filenameExtension;
         var metadata = new ObjectMetadata();
         metadata.setContentLength(multipartFile.getSize());
         metadata.setContentType(multipartFile.getContentType());
