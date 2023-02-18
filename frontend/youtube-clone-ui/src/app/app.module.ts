@@ -18,6 +18,11 @@ import {MatOptionModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatChipsModule} from '@angular/material/chips';
+import {VgCoreModule} from '@videogular/ngx-videogular/core';
+import {VgControlsModule} from '@videogular/ngx-videogular/controls';
+import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
+import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -43,7 +48,12 @@ import {MatChipsModule} from '@angular/material/chips';
     MatOptionModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatChipsModule
+    MatChipsModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-
+import {ActivatedRoute} from '@angular/router';
+import {VideoService} from '../video.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-save-video-details',
@@ -19,8 +21,15 @@ export class SaveVideoDetailsComponent {
      addOnBlur = true;
      readonly separatorKeysCodes = [ENTER, COMMA] as const;
      tags: string[] = [];
+     selectedFile!: File;
+     selectedFileName = '';
+     fileSelected = false;
+     videoId = '';
+     videoUrl!: string;
+     thumbnailUrl!: string;
 
-    constructor() {
+    constructor(private activatedRoute: ActivatedRoute, private videoService: VideoService, private matSnackBar: MatSnackBar) {
+        this.videoId = this.activatedRoute.snapshot.params['videoId'];
         this.saveVideoDetailsForm = new FormGroup({
         title: this.title,
         description: this.description,
@@ -43,4 +52,19 @@ export class SaveVideoDetailsComponent {
         this.tags.splice(index, 1);
       }
     }
+
+    onFileSelected(event: Event) {
+        // @ts-ignore
+        this.selectedFile = event.target.files[0];
+        this.selectedFileName = this.selectedFile.name;
+        this.fileSelected = true;
+    }
+
+     onUpload() {
+        this.videoService.uploadThumbnail(this.selectedFile, this.videoId)
+          .subscribe(() => {
+            // show an upload success notification.
+            this.matSnackBar.open("Thumbnail Upload Successful", "OK");
+          })
+      }
 }
