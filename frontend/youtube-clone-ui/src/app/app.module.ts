@@ -23,16 +23,6 @@ import {VgControlsModule} from '@videogular/ngx-videogular/controls';
 import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { VideoPlayerComponent } from './video-player/video-player.component';
-import { AuthConfigModule } from './auth/auth-config.module';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatCardModule} from '@angular/material/card';
-import {MatMenuModule} from '@angular/material/menu';
-
-
-
-
 
 
 @NgModule({
@@ -40,8 +30,7 @@ import {MatMenuModule} from '@angular/material/menu';
     AppComponent,
     UploadVideoComponent,
     HeaderComponent,
-    SaveVideoDetailsComponent,
-    VideoPlayerComponent
+    SaveVideoDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -64,12 +53,7 @@ import {MatMenuModule} from '@angular/material/menu';
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    MatSnackBarModule,
-    AuthConfigModule,
-    MatSidenavModule,
-    MatListModule,
-    MatCardModule,
-    MatMenuModule
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
