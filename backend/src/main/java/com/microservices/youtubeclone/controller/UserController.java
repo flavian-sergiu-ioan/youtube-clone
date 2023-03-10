@@ -22,8 +22,7 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public String register(Authentication authentication) {
         Jwt jwt = (Jwt) authentication.getPrincipal();
-        userRegistrationService.registerUser(jwt.getTokenValue());
-        return "User registration successful";
+        return userRegistrationService.registerUser(jwt.getTokenValue());
     }
 
     @PostMapping("/subsribe/{userId}")
