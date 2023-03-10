@@ -36,6 +36,10 @@ import { HistoryComponent } from './history/history.component';
 import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
 import { LikedVideosComponent } from './liked-videos/liked-videos.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { FeaturedComponent } from './featured/featured.component';
+import { VideoCardComponent } from './video-card/video-card.component';
+import { CallbackComponent } from './callback/callback.component';
+import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
@@ -50,7 +54,11 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     HistoryComponent,
     SubscriptionsComponent,
     LikedVideosComponent,
-    SidebarComponent
+    SidebarComponent,
+    FeaturedComponent,
+    VideoCardComponent,
+    CallbackComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
