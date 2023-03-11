@@ -28,7 +28,7 @@ const routes: Routes = [
         path: 'liked-videos', component: LikedVideosComponent,
       },
       {
-          path: 'callback', component: CallbackComponent,
+          path: 'callback', component: CallbackComponent
        }
     ]
   },
