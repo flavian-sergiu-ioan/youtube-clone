@@ -1,4 +1,4 @@
 export interface CommentDto {
-  commentText: string,
+  text: string,
   authorId: string
 }

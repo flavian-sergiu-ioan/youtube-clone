@@ -26,10 +26,7 @@ const routes: Routes = [
       },
       {
         path: 'liked-videos', component: LikedVideosComponent,
-      },
-      {
-          path: 'callback', component: CallbackComponent
-       }
+      }
     ]
   },
  {
@@ -40,7 +37,10 @@ const routes: Routes = [
   },
   {
       path: 'video-details/:videoId', component: VideoDetailComponent
-  }
+  },
+  {
+      path: 'callback', component: CallbackComponent
+   }
 ];
 
 @NgModule({

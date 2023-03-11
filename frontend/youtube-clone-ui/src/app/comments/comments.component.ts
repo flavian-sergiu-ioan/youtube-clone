@@ -32,7 +32,7 @@ export class CommentsComponent implements OnInit {
      const comment = this.commentsForm.get('comment')?.value;
 
      const commentDto = {
-       "commentText": comment,
+       "text": comment,
        "authorId": this.userService.getUserId()
      }
 
